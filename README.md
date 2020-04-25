@@ -1,24 +1,20 @@
-# Plugin Name
+# 404 if not found
 
-> Plugin short description
+By default and by design, when a requested short URL is not found, YOURLS redirects to the site root with a "302 temporary redirect" header. From the source:
+```php
+yourls_redirect( YOURLS_SITE, 302 ); // no 404 to tell browser this might change,
+                                     // and also to not pollute logs
+```
 
-Require [YOURLS](https://yourls.org) `<here: min-version if applicable>` and above.
-
-## Usage
-
-:bulb: This is a great place for showing a few usage examples!
+This plugin redirect with a "404 not found" instead.
 
 ## Installation
 
-:bulb: This is a great place for showing how to install the package. The common way is as below:
-
-1. In `/user/plugins`, create a new folder named `<here: your plugin folder name>`.
+1. In `/user/plugins`, create a new folder named `404-if-not-found`.
 2. Drop these files in that directory.
 3. Go to the Plugins administration page (eg. `http://sho.rt/admin/plugins.php`) and activate the plugin.
 4. Have fun!
 
 ## License
 
-:bulb: The license might be updated with your terms.
-
-This package is licensed under the [MIT License](LICENSE).
+Do whatever the hell you want with this.
