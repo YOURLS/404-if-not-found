@@ -1,26 +1,18 @@
 <?php
 /*
-Plugin Name: Your Plugin Name
-Plugin URI: https://github.com/your_name/your_plugin
-Description: One line description of your plugin
+Plugin Name: 404 if not found
+Plugin URI: https://github.com/YOURLS/404-if-not-found/
+Description: Send a 404 (instead of a 302) when short URL is not found
 Version: 1.0
-Author: Your Name
-Author URI: https://your-site-if-any/
+Author: Ozh
+Author URI: https://yourls.org/
 */
 
 // No direct call
 if( !defined( 'YOURLS_ABSPATH' ) ) die();
 
-/*
-
- Your code goes here.
- 
- Suggested read:
- https://github.com/YOURLS/YOURLS/wiki/Plugins
- https://github.com/YOURLS/YOURLS/wiki/How-to-make-Plugins
- https://github.com/YOURLS/YOURLS/wiki/Coding-Standards
- https://github.com/YOURLS/YOURLS/wiki#for-developpers
- 
- Have fun!
- 
-*/
+yourls_add_action('redirect_keyword_not_found', 'ozh_404_if_not_found');
+function ozh_404_if_not_found() {
+    yourls_redirect( YOURLS_SITE, 404 );
+    die();
+}
