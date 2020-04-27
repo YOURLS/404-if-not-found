@@ -6,7 +6,7 @@ yourls_redirect( YOURLS_SITE, 302 ); // no 404 to tell browser this might change
                                      // and also to not pollute logs
 ```
 
-This plugin redirect with a "404 not found" instead.
+This plugin outputs a default "404 not found" error page instead.
 
 ## Installation
 
