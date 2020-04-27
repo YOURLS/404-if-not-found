@@ -12,7 +12,16 @@ Author URI: https://yourls.org/
 if( !defined( 'YOURLS_ABSPATH' ) ) die();
 
 yourls_add_action('redirect_keyword_not_found', 'ozh_404_if_not_found');
+
+// Display a default 404 not found page
 function ozh_404_if_not_found() {
-    yourls_redirect( YOURLS_SITE, 404 );
-    die();
+    yourls_status_header(404);
+    $notfound = '<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">'
+              . '<html><head>'
+              . '<title>404 Not Found</title>'
+              . '</head><body>'
+              . '<h1>Not Found</h1>'
+              . '<p>The requested URL was not found on this server.</p>'
+              . '</body></html>';
+    die($notfound);
 }
